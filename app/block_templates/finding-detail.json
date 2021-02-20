@@ -1,0 +1,50 @@
+[
+    {
+        "type": "section",
+        "text": {
+            "type": "mrkdwn",
+            "text": "A new security finding has been identified: <<WEB_LINK>|<SUBJECT>>"
+        }
+    },
+    {
+        "type": "section",
+        "text": {
+            "type": "mrkdwn",
+            "text": "*Project*: <PROJECT_ID>\n*Severity*: *<SEVERITY>* <SEV_EMO>\n*State*: <STATE>\n*When*: <TIMESTAMP>"
+        },
+        "accessory": {
+            "type": "button",
+            "text": {
+                "type": "plain_text",
+                "text": "View in Cloud Console"
+            },
+            "value": "click_view",
+            "url": "<WEB_LINK>",
+            "action_id": "button-view"
+        }
+    },
+    {
+        "type": "section",
+        "text": {
+            "type": "mrkdwn",
+            "text": "*Explanation:*\n<EXPLANATION>"
+        }
+    },
+    {
+        "type": "section",
+        "text": {
+            "type": "mrkdwn",
+            "text": "*Recommendation:*\n<RECOMMENDATION>"
+        }
+    },
+    {
+        "type": "section",
+        "text": {
+            "type": "mrkdwn",
+            "text": "*Instructions:*\n<INSTRUCT>"
+        }
+    },
+    {
+        "type": "divider"
+    }
+]

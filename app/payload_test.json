@@ -1,0 +1,32 @@
+{
+	"finding": {
+		"name": "organizations/976583563296/sources/10983767999636696589/findings/eeb01152d2d9fdaf3a0ff6e856338e26",
+		"severity": "HIGH",
+		"createTime": "2021-02-13T23:00:06.534Z",
+		"resourceName": "//compute.googleapis.com/projects/ami-host-test-01/regions/europe-central2/subnetworks/6050326123903313692",
+		"eventTime": "2021-02-13T23:00:06.039628Z",
+		"securityMarks": {
+			"name": "organizations/976583563296/sources/10983767999636696589/findings/eeb01152d2d9fdaf3a0ff6e856338e26/securityMarks"
+		},
+		"externalUri": "https://console.cloud.google.com/networking/subnetworks/details/europe-central2/default?project=ami-host-test-01",
+		"sourceProperties": {
+			"SeverityLevel": "Low",
+			"ReactivationCount": 0,
+			"Explanation": "Private Google Access enables VM instances with only internal (private) IP addresses to reach the public IP addresses of Google APIs and services. Learn more at: https://cloud.google.com/vpc/docs/configure-private-google-access",
+			"Recommendation": "Go to https://console.cloud.google.com/networking/subnetworks/details/europe-central2/default?project=ami-host-test-01, click \"Edit\", and enable Private Google Access. Then, remove public (external) IPs from any VM instances whose only external traffic is to Google APIs by following the steps at: https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address#unassign_ip",
+			"ScannerName": "SUBNETWORK_SCANNER",
+			"ExceptionInstructions": "Add the security mark \"allow_private_google_access_disabled\" to the asset with a value of \"true\" to prevent this finding from being activated again."
+		},
+		"parent": "organizations/976583563296/sources/10983767999636696589",
+		"category": "PRIVATE_GOOGLE_ACCESS_DISABLED",
+		"state": "ACTIVE"
+	},
+	"resource": {
+		"name": "//compute.googleapis.com/projects/ami-host-test-01/regions/europe-central2/subnetworks/6050326123903313692",
+		"parent": "//cloudresourcemanager.googleapis.com/projects/239907469918",
+		"parentDisplayName": "ami-host-test-01",
+		"projectDisplayName": "ami-host-test-01",
+		"project": "//cloudresourcemanager.googleapis.com/projects/239907469918"
+	},
+	"notificationConfigName": "organizations/976583563296/notificationConfigs/default_config-scc-notifications-handlers"
+}
