@@ -13,15 +13,15 @@
 
 ## Features
 
-Google Security Command Center (SCC) surfaces security issues in the form of Findings. This Slack Message handler extends visibility of those Findings by presenting them into a Slack Channel. 
+Google Security Command Center (SCC) surfaces security issues in the form of Findings. This Slack Message handler extends the visibility of those Findings by presenting them into a Slack Channel. 
 <p align="center">
 	<img src="img/slack_message.png" alt="Slack Message Example" width="500px">
 </p>
-The projects is a Google Cloud Function that is triggered by SCC Findings sent to a PubSub Topic. The PubSub configuration may be setup using the related project https://github.com/gschaeffer/scc-alerts. The default filter is for high severity Findings.  
+The projects is a Google Cloud Function that is triggered by SCC Findings sent to a PubSub Topic. The PubSub configuration may be set up using the related project https://github.com/gschaeffer/scc-alerts. The default filter is for high severity Findings.  
 
 ## Requirements
 
-SCC Notifications must be setup. That process is simplified using the related project https://github.com/gschaeffer/scc-alerts. 
+SCC Notifications must be set up. That process is simplified using the related project https://github.com/gschaeffer/scc-alerts. 
 
 ## Installation
 
