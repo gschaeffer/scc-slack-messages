@@ -51,8 +51,8 @@ Deploy the cloud function
 # Clone the repo
 git clone https://github.com/gschaeffer/scc-slack-handler
 
-# Update the project id
-sed -i '' "s/[PROJECT_ID]/${PROJECT}/g" deploy_func.sh
+# Update the project id using the PROJECT var set above
+sed -i '' "s/PROJECT_ID/${PROJECT}/" deploy_func.sh
 
 # Deploy the Cloud Function
 ./deploy_func.sh
