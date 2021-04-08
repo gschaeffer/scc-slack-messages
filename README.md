@@ -11,7 +11,7 @@
 </p>
 
 
-## Features
+### Features
 
 Google Security Command Center (SCC) surfaces security issues in the form of Findings. This Slack Message handler extends the visibility of those Findings by presenting them into a Slack Channel. 
 <p align="center">
@@ -19,11 +19,11 @@ Google Security Command Center (SCC) surfaces security issues in the form of Fin
 </p>
 The projects is a Google Cloud Function that is triggered by SCC Findings sent to a PubSub Topic. The PubSub configuration may be set up using the related project https://github.com/gschaeffer/scc-alerts. The default filter is for high severity Findings.  
 
-## Requirements
+### Requirements
 
 SCC Notifications must be set up. That process is simplified using the related project https://github.com/gschaeffer/scc-alerts. 
 
-## Installation
+### Installation
 
 Set the project value for the gcloud commands.
 
@@ -35,9 +35,23 @@ gcloud config set core/project $PROJECT
 gcloud config get-value core/project
 ```
 
-Create secrets in Cloud Secret Manager. Enable the service if it is not already enabled.
+Enable services
 
 ```bash
+# Enable the services if it is not already enabled
+gcloud services enable secretmanager.googleapis.com
+
+gcloud services enable cloudfunctions.googleapis.com
+
+gcloud services enable cloudbuild.googleapis.com
+```
+
+Create secrets in Cloud Secret Manager. 
+
+```bash
+# Enable Secret Manager
+gcloud services enable secretmanager.googleapis.com
+
 # Create secret 'slack-token'; replace value including brackets.
 print "[SECRET_VALUE]" | gcloud secrets create slack-handler-token --data-file=- --replication-policy user-managed --locations us-central1
 
@@ -58,7 +72,7 @@ sed -i '' "s/PROJECT_ID/${PROJECT}/" deploy_func.sh
 ./deploy_func.sh
 ```
 
-## Cleanup
+### Cleanup
 
 To remove resources use the gcloud scripts below.
 
@@ -72,6 +86,6 @@ gcloud secrets delete slack-handler-channel
 ```
 
 
-## References
+### References
 - https://github.com/gschaeffer/scc-alerts
 - https://api.slack.com/tools
