@@ -4,11 +4,11 @@
 
 NAME=scc_slack_handler
 ENTRY_POINT=scc_slack_handler
-LABELS="app=scc_slack_alerts"
+LABELS="app=scc_slack_messages"
 MEMORY=256MB
 REGION=us-central1
 SOURCE_DIR="app/"
-TOPIC="scc-notifications"
+TOPIC="scc-findings"
 
 gcloud functions deploy $NAME \
     --entry-point $ENTRY_POINT \
