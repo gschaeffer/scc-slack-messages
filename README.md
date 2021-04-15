@@ -59,6 +59,16 @@ print "[SECRET_VALUE]" | gcloud secrets create slack-handler-token --data-file=-
 print "[SECRET_VALUE]" | gcloud secrets create slack-handler-channel --data-file=- --replication-policy user-managed --locations us-central1
 ```
 
+Grant service account of the Cloud Function access to the secrets.
+
+```bash
+# slack-handler-token
+gcloud secrets add-iam-policy-binding slack-handler-token --member serviceAccount:$(gcloud config get-value project)@appspot.gserviceaccount.com --role roles/secretmanager.secretAccessor --condition None
+
+# slack-handler-channel
+gcloud secrets add-iam-policy-binding slack-handler-channel --member serviceAccount:$(gcloud config get-value project)@appspot.gserviceaccount.com --role roles/secretmanager.secretAccessor --condition None
+```
+
 Deploy the cloud function
 
 ```bash
