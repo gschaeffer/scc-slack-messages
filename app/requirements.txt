@@ -4,3 +4,6 @@ requests
 ###### Requirements with Version Specifiers ######`
 google-cloud-secret-manager >= 2.2.0
 google-cloud-logging >= 2.2.0
+
+###### Optional, add sentry.io monitoring
+sentry-sdk
