@@ -79,7 +79,7 @@ Deploy the cloud function
 
 ```bash
 # Clone the repo
-git clone https://github.com/gschaeffer/scc-slack-handler
+git clone https://github.com/gschaeffer/scc-slack-messages
 
 # Update the project id using the PROJECT var set above
 sed -i '' "s/PROJECT_ID/${PROJECT}/" deploy_func.sh
