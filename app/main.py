@@ -5,8 +5,6 @@ import requests
 from google.cloud import logging
 from google.cloud import secretmanager
 
-import sentry_sdk
-
 
 def message_post(data):
     # pprint.pprint(payload)
@@ -121,8 +119,6 @@ def scc_slack_handler(event, context):
     Returns:
         None; the output is written to Cloud Logging.
     """
-    # Optional: init sentry. Requires secret to exist
-    sentry_sdk.init(get_secret("sentry-sdk-dsn"),traces_sample_rate=0.2,)
 
     import base64
 

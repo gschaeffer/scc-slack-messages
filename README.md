@@ -57,9 +57,6 @@ print "[SECRET_VALUE]" | gcloud secrets create slack-handler-token --data-file=-
 
 # Create secret 'slack-channel'; replace value including brackets.
 print "[SECRET_VALUE]" | gcloud secrets create slack-handler-channel --data-file=- --replication-policy user-managed --locations us-central1
-
-# Optionally, add sentry.io monitoring token.
-print "[SECRET_VALUE]" | gcloud secrets create sentry-sdk-dsn --data-file=- --replication-policy user-managed --locations us-central1
 ```
 
 Grant service account of the Cloud Function access to the secrets.
@@ -70,9 +67,6 @@ gcloud secrets add-iam-policy-binding slack-handler-token --member serviceAccoun
 
 # slack-handler-channel
 gcloud secrets add-iam-policy-binding slack-handler-channel --member serviceAccount:$(gcloud config get-value project)@appspot.gserviceaccount.com --role roles/secretmanager.secretAccessor --condition None
-
-# Optionally, add binding if sentry.io is used
-gcloud secrets add-iam-policy-binding sentry-sdk-dsn --member serviceAccount:$(gcloud config get-value project)@appspot.gserviceaccount.com --role roles/secretmanager.secretAccessor --condition None
 ```
 
 Deploy the cloud function
